@@ -11,7 +11,7 @@ import {
 
 const Case = ({caseItem}) => {
     return (
-        <CaseContainer>
+        <CaseContainer name={caseItem.id}>
             <CaseImage src={caseItem.img} alt={caseItem.name}/>
             <CaseName>{caseItem.name}</CaseName>
             <PriceContainer>

@@ -1,15 +1,13 @@
 import React from 'react';
-import { weapon } from "../../weapon";
+
 import { Card, WeaponImage, WeaponName, WeaponSkin } from "./WeaponCard.styles";
 
-const WeaponCard = ({id}) => {
-    const weaponCard = weapon.find(weapon => weapon.id === id);
-
+const WeaponCard = ({weapon}) => {
     return (
-        <Card color={weaponCard.color}>
-            <WeaponImage src={weaponCard.img} alt={`${weaponCard.name} | ${weaponCard.skin}`}/>
-            <WeaponName>{weaponCard.name}</WeaponName>
-            <WeaponSkin>{weaponCard.skin}</WeaponSkin>
+        <Card color={weapon.color}>
+            <WeaponImage src={weapon.img} alt={`${weapon.name} | ${weapon.skin}`}/>
+            <WeaponName>{weapon.name}</WeaponName>
+            <WeaponSkin>{weapon.skin}</WeaponSkin>
         </Card>
     );
 };

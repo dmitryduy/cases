@@ -1,7 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
-export const CaseContainer = styled.div`
+export const CaseContainer = styled(Link).attrs(props =>({
+    to: `/case/${props.name}`
+}))`
   max-width: 250px;
   min-width: 200px;
   cursor: pointer;
@@ -36,6 +39,7 @@ export const CasePrice = styled.span`
   border-radius: 10px;
   font-size: 18px;
   background-image: linear-gradient(90deg, #4404ff 19%, #5316ff 64%, #6227ff);
+  z-index: 1;
 `;
 
 export const CasePreviousPrice = styled.span`
@@ -45,5 +49,4 @@ export const CasePreviousPrice = styled.span`
   border-radius: 10px;
   background-color: #0f121e;
   transform: translateX(-10px);
-  z-index: -1;
 `;
