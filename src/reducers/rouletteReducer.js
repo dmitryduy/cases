@@ -1,25 +1,22 @@
 const initialState = {
     multiply: 1,
-    rouletteIds: null,
- 
+    activeRoulettes: 0,
+
 }
 const types = {
     CHANGE_MULTIPLY: 'CHANGE_MULTIPLY',
-    ADD_WINNER_WEAPON: 'ADD_WINNER_WEAPON'
-    
+    ADD_ROULETTES_COUNT: 'ADD_ROULETTES_COUNT',
+    DECREMENT_ROULETTES_COUNT: 'DECREMENT_ROULETTES_COUNT',
 }
 
 export const rouletteReducer = (state=initialState, action) => {
     switch (action.type) {
         case types.CHANGE_MULTIPLY:
             return {...state, multiply: action.payload};
-        case types.ADD_WINNER_WEAPON:
-            if (!state.rouletteIds) {
-                return {...state, rouletteIds: [action.payload]};
-            }
-            else {
-                return {...state, rouletteIds: [...state.rouletteIds, action.payload]};
-            }
+        case types.ADD_ROULETTES_COUNT:
+                return {...state, activeRoulettes: action.payload};
+        case types.DECREMENT_ROULETTES_COUNT:
+            return {...state, activeRoulettes: state.activeRoulettes - 1}
         default:
             return state;
     }
@@ -32,9 +29,15 @@ export const setMultiplyActionCreator = multiply => {
     }
 }
 
-export const addWinnerActionCreator = rouletteId => {
+export const addRoulettesCountActionCreator = roulettesCount => {
     return {
-        type: types.ADD_WINNER_WEAPON,
-        payload: rouletteId
+        type: types.ADD_ROULETTES_COUNT,
+        payload: roulettesCount
+    }
+}
+
+export const decrementRoulettesCountActionCreator = () => {
+    return {
+        type: types.DECREMENT_ROULETTES_COUNT
     }
 }

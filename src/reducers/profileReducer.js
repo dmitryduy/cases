@@ -11,9 +11,9 @@ const initialState = {
 export const profileReducer = (state=initialState, action) => {
     switch (action.type) {
         case types.INCREMENT_MONEY:
-            return {totalMoney: state.totalMoney + action.payload};
+            return {totalMoney: +(state.totalMoney + action.payload).toFixed(2)};
         case types.DECREMENT_MONEY:
-            return {totalMoney: state.totalMoney - action.payload};
+            return {totalMoney: +(state.totalMoney - action.payload).toFixed(2)};
         default:
             return state;
     }

@@ -11,18 +11,20 @@ import WeaponCard from "../WeaponCard/WeaponCard";
 import NeonButton from "../NeonButton/NeonButton";
 import { useDispatch, useSelector } from "react-redux";
 import { incrementMoneyActionCreator } from "../../reducers/profileReducer";
-import { addWinnerActionCreator, showWinnerActionCreator } from "../../reducers/rouletteReducer";
+import {
+    decrementRoulettesCountActionCreator,
+    setMultiplyActionCreator,
+} from "../../reducers/rouletteReducer";
 
 const getWeapon = (weapons) => {
     const winnerNumber = Math.floor(Math.random() * 135500);
     return weapons.find(weapon => weapon.chance[0] <= winnerNumber && weapon.chance[1] >= winnerNumber);
 }
 
-const Roulette = ({weapons, setOpenCase, rouletteId}) => {
+const Roulette = ({weapons, removeRoulette, rouletteId}) => {
     const [rollAnimation, setRollAnimation] = useState(false);
     const [prepareAnimation, setPrepareAnimation] = useState(false);
     const [showWinner, setShowWinner] = useState(false);
-    const rouletteIds = useSelector(({roulette}) => roulette.rouletteIds);
 
 
     const winner = useRef(getWeapon(weapons));
@@ -36,12 +38,12 @@ const Roulette = ({weapons, setOpenCase, rouletteId}) => {
 
     const sellWeapon = () => {
         dispatch(incrementMoneyActionCreator(winner.current.price));
-        setOpenCase(false);
+        dispatch(decrementRoulettesCountActionCreator());
+        removeRoulette(rouletteId);
     }
 
     const showWinnerHandler = () => {
         setShowWinner(true);
-       dispatch(addWinnerActionCreator(rouletteId))
     }
 
     useEffect(() => {

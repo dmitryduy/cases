@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React  from 'react';
 import { CaseImage, Multipliers, Multiply, OpenCase } from "./StartRouletteBlock.styles";
 import NeonButton from "../NeonButton/NeonButton";
 import { useDispatch, useSelector } from "react-redux";
 import { decrementMoneyActionCreator } from "../../reducers/profileReducer";
-import { setMultiplyActionCreator } from "../../reducers/rouletteReducer";
+import { addRoulettesCountActionCreator, setMultiplyActionCreator } from "../../reducers/rouletteReducer";
 
 const StartRouletteBlock = ({caseImg, price, setOpenCase}) => {
     const dispatch = useDispatch();
@@ -12,6 +12,7 @@ const StartRouletteBlock = ({caseImg, price, setOpenCase}) => {
 
     const runCase = () => {
         setOpenCase(true);
+        dispatch(addRoulettesCountActionCreator(rouletteCount));
         dispatch(decrementMoneyActionCreator(rouletteCount * price));
     }
 
@@ -24,7 +25,7 @@ const StartRouletteBlock = ({caseImg, price, setOpenCase}) => {
             <CaseImage src={caseImg} alt="case Image"/>
             <div>
                 <OpenCase onClick={runCase}>Открыть</OpenCase>
-                <NeonButton onClick={null}>{price} Р</NeonButton>
+                <NeonButton onClick={null}>{rouletteCount * price} Р</NeonButton>
             </div>
             <span style={{color: "#fff", marginBottom: "10px", display: "inline-block"}}>Открыть за раз</span>
             <Multipliers>
