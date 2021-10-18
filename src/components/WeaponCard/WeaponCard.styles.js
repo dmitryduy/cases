@@ -7,8 +7,8 @@ export const Card = styled.div`
   height: 130px;
   margin: 0 2px;
   flex-shrink: 0;
+  position: relative;
   ${props => props.color === colors.lightBlue && css`
-    background-color: #151821;
     background-image: radial-gradient(at bottom, #002533 0, transparent 75%), radial-gradient(at bottom, #0bf 0, transparent 60%), radial-gradient(at bottom, rgba(0, 187, 255, .9) 0, transparent 66%);
     -webkit-box-shadow: inset 0 -0.125rem #0bf;
     box-shadow: inset 0 -0.125rem #0bf;

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { caseSections } from "../../caseSections";
 import CaseSection from "../../components/CaseSection/CaseSection";
 

@@ -1,7 +1,7 @@
 import React from 'react';
+
 import {
     CaseContainer,
-    CaseDiscountPrice,
     CaseImage,
     CaseName,
     CasePreviousPrice,

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+
 import {
     InnerRouletteBlock,
     RouletteStyled,
@@ -9,12 +10,15 @@ import {
 } from "./Roulette.styles";
 import WeaponCard from "../WeaponCard/WeaponCard";
 import NeonButton from "../NeonButton/NeonButton";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { incrementMoneyActionCreator } from "../../reducers/profileReducer";
 import {
     decrementRoulettesCountActionCreator,
-    setMultiplyActionCreator,
 } from "../../reducers/rouletteReducer";
+import { addWeaponToLiveActionCreator } from "../../reducers/liveRouletteReducer";
+
+const COUNT_OF_WEAPONS_IN_ROULETTE = 30;
+const WINNER_INDEX = 24;
 
 const getWeapon = (weapons) => {
     const winnerNumber = Math.floor(Math.random() * 135500);
@@ -26,11 +30,10 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
     const [prepareAnimation, setPrepareAnimation] = useState(false);
     const [showWinner, setShowWinner] = useState(false);
 
-
     const winner = useRef(getWeapon(weapons));
 
-    const weaponsArray = useMemo(() => new Array(30).fill(0).map((_, index) => {
-        if (index === 24) return <WeaponCard key={index} weapon={winner.current}/>;
+    const weaponsArray = useMemo(() => new Array(COUNT_OF_WEAPONS_IN_ROULETTE).fill(0).map((_, index) => {
+        if (index === WINNER_INDEX) return <WeaponCard key={index} weapon={winner.current}/>;
         return <WeaponCard key={index} weapon={getWeapon(weapons)}/>;
     }), []);
 
@@ -39,6 +42,7 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
     const sellWeapon = () => {
         dispatch(incrementMoneyActionCreator(winner.current.price));
         dispatch(decrementRoulettesCountActionCreator());
+        dispatch(addWeaponToLiveActionCreator(winner.current));
         removeRoulette(rouletteId);
     }
 

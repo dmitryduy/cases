@@ -10,7 +10,7 @@ const Header = () => {
         <HeaderContainer>
             <LogoContainer>
                 <Logo src={logo}/>
-                <LogoTitle>givedrop</LogoTitle>
+                <LogoTitle>open cases</LogoTitle>
             </LogoContainer>
             <HeaderNavbar/>
             <ProfileInfo/>

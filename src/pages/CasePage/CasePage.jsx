@@ -6,7 +6,7 @@ import SectionName from "../../components/SectionName/SectionName";
 import { CardsContainer, ContentTitle } from "./CasePage.styles";
 import WeaponCard from "../../components/WeaponCard/WeaponCard";
 import WeaponRoulette from "../../components/WeaponRoulette/WeaponRoulette";
-import { useSelector } from "react-redux";
+
 
 const CasePage = () => {
     const {id} = useParams();
