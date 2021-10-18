@@ -2,9 +2,10 @@ import React from 'react';
 import styled from "styled-components";
 
 const MainContainer = styled.div`
-  max-width: 2000px;
-  width: calc(100vw - 10px);
-  padding: 0 150px;
+  padding: 0 100px;
+  @media (max-width: 1050px) {
+    padding: 0 20px;
+  }
 `;
 
 const Container = ({children}) => {

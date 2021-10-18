@@ -33,6 +33,7 @@ export const Card = styled.div`
   background-size: 213% 316%;
   background-position-x: 50%;
   background-position-y: 0;
+  margin: 0 auto;
 `;
 
 export const WeaponImage = styled.img`

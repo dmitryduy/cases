@@ -18,6 +18,12 @@ export const SectionNameStyled = styled.h2`
     content: '';
     background-repeat: repeat-x;
     background-image: url("https://givedrop.ru/images/h-decor-part-left.png");
+    @media (max-width: 900px) {
+      width: 200px;
+    }
+    @media (max-width: 660px) {
+      display: none;
+    }
   }
 
   &:before {

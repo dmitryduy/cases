@@ -14,6 +14,9 @@ export const NavbarContainer = styled.div`
       fill: #eef3ff;
     }
   }
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `;
 
 export const Navbar = styled.nav`

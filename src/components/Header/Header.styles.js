@@ -14,7 +14,10 @@ export const LogoContainer = styled(Link).attrs({
 })`
   display: flex;
   align-items: center;
-  padding: 0 30px;  
+  padding: 0 30px;
+  @media (max-width: 500px) {
+    padding: 10px;
+  }
 `;
 
 export const Logo = styled.img`
@@ -26,4 +29,10 @@ export const LogoTitle = styled.span`
   color: #fff;
   font-weight: bold;
   font-size: 30px;
+  @media (max-width: 500px) {
+    font-size: 20px;
+  }
+  @media (max-width: 430px) {
+    font-size: 15px;
+  }
 `;

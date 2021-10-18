@@ -11,6 +11,7 @@ import { setMultiplyActionCreator } from "../../reducers/rouletteReducer";
 export const RouletteContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
 `;
 
 const WeaponRoulette = ({caseImg, price, weapons}) => {

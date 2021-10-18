@@ -38,7 +38,8 @@ export const InnerRouletteBlock = styled.div`
 
 export const WinnerBlock = styled.div`
   width: 300px;
-  margin: 0 auto 30px;
+  margin: 0 0 30px;
+  flex-basis: auto;
 `;
 
 export const WinnerImage = styled.div`

@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 export const CaseImage = styled.img`
   max-width: 400px;
+  @media (max-width: 500px) {
+    width: 270px;
+  }
 `;
 
 export const OpenCase = styled.button`
