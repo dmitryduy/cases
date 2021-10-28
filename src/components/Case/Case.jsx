@@ -8,11 +8,15 @@ import {
     CasePrice,
     PriceContainer
 } from "./Case.styles";
+import CircleProgressBar from "../CircleProgressBar/CircleProgressBar";
 
 const Case = ({caseItem}) => {
     return (
         <CaseContainer name={caseItem.id}>
-            <CaseImage src={caseItem.img} alt={caseItem.name}/>
+            <div style={{position: 'relative'}}>
+                <CaseImage src={caseItem.img} alt={caseItem.name}/>
+                {caseItem.limit && <CircleProgressBar max={caseItem.limit} current={490}/>}
+            </div>
             <CaseName>{caseItem.name}</CaseName>
             <PriceContainer>
                 <CasePrice>{caseItem.discountPrice || caseItem.price} Р</CasePrice>
