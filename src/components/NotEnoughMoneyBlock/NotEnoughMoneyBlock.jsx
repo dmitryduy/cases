@@ -8,7 +8,7 @@ import NeonButton from "../NeonButton/NeonButton";
 
 const NotEnoughMoneyBlock = ({caseImg}) => {
     return (
-        <>
+        <div>
             <NotEnoughMoneyContainer caseImg={caseImg}>
                 <NotEnoughMoneyImage src="https://givedrop.ru/images/icon/background-case-nomoney.svg"
                                      alt="not enough money image"/>
@@ -18,7 +18,7 @@ const NotEnoughMoneyBlock = ({caseImg}) => {
                 <span>Пополните ваш баланс</span>
             </NotEnoughMoneyText>
             <NeonButton>Пополнить</NeonButton>
-        </>
+        </div>
     );
 };
 

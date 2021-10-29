@@ -6,6 +6,8 @@ import Roulette from "../Roulette/Roulette";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { setMultiplyActionCreator } from "../../reducers/rouletteReducer";
+import { CaseWrapper, Limited } from "./WeaponRoulette.styles";
+import LimitedWrapper from "../LimitedWrapper/LimitedWrapper";
 
 
 export const RouletteContainer = styled.div`
@@ -14,10 +16,12 @@ export const RouletteContainer = styled.div`
   justify-content: flex-start;
 `;
 
-const WeaponRoulette = ({caseImg, price, weapons}) => {
+const WeaponRoulette = ({caseImg, price, weapons, id, caseLimit}) => {
 
     const [openCase, setOpenCase] = useState(false);
     const rouletteCount = useSelector(({roulette}) => roulette.multiply);
+
+
     const [rouletteIds, setRouletteIds] = useState([1]);
     //count of active roulettes
     const activeRoulettes = useSelector(({roulette}) => roulette.activeRoulettes);
@@ -25,7 +29,6 @@ const WeaponRoulette = ({caseImg, price, weapons}) => {
     useEffect(() => {
         setRouletteIds(Array(rouletteCount).fill(0).map((_, index) => index + 1))
     }, [rouletteCount]);
-
 
 
     const totalMoney = useSelector(({profile}) => profile.totalMoney);
@@ -40,11 +43,20 @@ const WeaponRoulette = ({caseImg, price, weapons}) => {
     }
 
     if (totalMoney < price && !openCase) {
-        return <NotEnoughMoneyBlock caseImg={caseImg}/>;
+        return (
+            <LimitedWrapper id={id} limit={caseLimit}>
+                <NotEnoughMoneyBlock caseImg={caseImg}/>
+            </LimitedWrapper>
+
+        )
     }
 
     if (!openCase) {
-        return <StartRouletteBlock setOpenCase={setOpenCase} caseImg={caseImg} price={price}/>;
+        return (
+            <LimitedWrapper id={id} limit={caseLimit}>
+                <StartRouletteBlock id={id} setOpenCase={setOpenCase} caseImg={caseImg} price={price}/>
+            </LimitedWrapper>
+        )
     } else {
         return (
             <RouletteContainer>

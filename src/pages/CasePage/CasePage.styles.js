@@ -8,9 +8,9 @@ export const ContentTitle = styled.h2`
   display: flex;
   overflow: hidden;
   margin: 30px 0;
-  
 
-   &:after {
+
+  &:after {
     position: absolute;
     height: 10px;
     top: 50%;
@@ -19,11 +19,11 @@ export const ContentTitle = styled.h2`
     background-repeat: repeat-x;
     background-image: url("https://givedrop.ru/images/h-decor-part-left.png");
   }
-  
+
 
   &:after {
     left: 270px;
-    transform: translateY( -50%);
+    transform: translateY(-50%);
   }
 
   @media (max-width: 600px) {
@@ -34,7 +34,7 @@ export const ContentTitle = styled.h2`
 
 
 export const CardsContainer = styled.div`
-display: grid;
+  display: grid;
   row-gap: 10px;
   grid-template-columns: repeat(8, 1fr);
   margin-bottom: 50px;
@@ -58,6 +58,7 @@ display: grid;
   }
   @media (max-width: 350px) {
     grid-template-columns: repeat(1, 1fr);
-    
+
   }
 `;
+

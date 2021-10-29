@@ -9,13 +9,16 @@ import {
     PriceContainer
 } from "./Case.styles";
 import CircleProgressBar from "../CircleProgressBar/CircleProgressBar";
+import { useSelector } from "react-redux";
 
 const Case = ({caseItem}) => {
+    const casesRemain = useSelector(({cases}) => cases.limitedCases.find(limitedCase => limitedCase.id === caseItem.id));
+    console.log(casesRemain);
     return (
         <CaseContainer name={caseItem.id}>
             <div style={{position: 'relative'}}>
                 <CaseImage src={caseItem.img} alt={caseItem.name}/>
-                {caseItem.limit && <CircleProgressBar max={caseItem.limit} current={490}/>}
+                {caseItem.limit && <CircleProgressBar max={caseItem.limit} current={caseItem.limit - casesRemain.remain}/>}
             </div>
             <CaseName>{caseItem.name}</CaseName>
             <PriceContainer>
