@@ -4,7 +4,7 @@ export const ProgressBar = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  transform: translate(30%, -30%);
+  transform: translate(30%, -80%);
   width: 50px;
   height: 50px;
 `;

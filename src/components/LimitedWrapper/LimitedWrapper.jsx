@@ -14,6 +14,7 @@ export const Limited = styled.div`
   justify-content: center;
   font-size: 30px;
   color: #fff;
+
   span:last-child {
     font-weight: bold;
     margin-top: 40px;
@@ -22,18 +23,19 @@ export const Limited = styled.div`
 
 
 const LimitedWrapper = ({children, id, limit}) => {
-    const opensRemains = useSelector(({cases}) =>
-        cases.limitedCases.find((limitedCase => limitedCase.id === +id)))?.remain;
+    const opensRemains = useSelector(({cases}) => (
+        cases.limitedCases.find((limitedCase => limitedCase.id === +id))
+    ))?.remain;
 
     return (
         <CaseWrapper>
-            {opensRemains &&
+            {opensRemains >= 0 &&
             <Limited>
                 <span>Количество открытий</span>
                 <span>{limit - opensRemains}</span>
             </Limited>}
             {children}
-            {opensRemains &&
+            {opensRemains >= 0 &&
             <Limited>
                 <span>Лимит открытий</span>
                 <span>{limit}</span>

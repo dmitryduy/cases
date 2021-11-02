@@ -5,11 +5,15 @@ import { Link } from "react-router-dom";
 export const CaseContainer = styled(Link).attrs(props =>({
     to: `/case/${props.name}`
 }))`
-  max-width: 250px;
+  max-width: 300px;
   min-width: 200px;
   cursor: pointer;
-  margin-bottom: 50px;
-
+  margin: 0 10px 50px;
+  
+  &:last-child {
+    flex: 1;
+  }
+  
   &:hover img {
     transform: translateY(-10px);
   }
@@ -21,7 +25,7 @@ export const CaseContainer = styled(Link).attrs(props =>({
 `;
 
 export const CaseImage = styled.img`
-  max-width: 250px;
+  max-width: 300px;
   transition: .3s linear;
   margin-bottom: 10px;
   @media (max-width: 700px) {

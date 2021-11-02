@@ -14,14 +14,11 @@ const getLimitedCases = () => {
             remain: caseItem.limit
         }
     })
-    localStorage.setItem('limitedCases', JSON.stringify(filteredArray));
-    return filteredArray;
+    localStorage.setItem('limitedCases', JSON.stringify({limitedCases: filteredArray}));
+    return {limitedCases: filteredArray};
 }
 
-const initialState = {
-    limitedCases: JSON.parse(localStorage.getItem('limitedCases')) || getLimitedCases()
-
-}
+const initialState = JSON.parse(localStorage.getItem('limitedCases')) || getLimitedCases();
 
 export const casesReducer = (state=initialState, action) => {
     switch (action.type) {

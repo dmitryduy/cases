@@ -1,10 +1,14 @@
-import React  from 'react';
-import { CaseImage, Multipliers, Multiply, OpenCase } from "./StartRouletteBlock.styles";
-import NeonButton from "../NeonButton/NeonButton";
+import React from 'react';
+
 import { useDispatch, useSelector } from "react-redux";
+
+import { CaseImage, Multipliers, Multiply, OpenCase, Text } from "./StartRouletteBlock.styles";
+import NeonButton from "../NeonButton/NeonButton";
 import { decrementMoneyActionCreator } from "../../reducers/profileReducer";
 import { addRoulettesCountActionCreator, setMultiplyActionCreator } from "../../reducers/rouletteReducer";
 import { decrementRemainCasesActionCreator } from "../../reducers/casesReducer";
+
+const multiplies = [1, 2, 3, 4, 5, 10];
 
 const StartRouletteBlock = ({caseImg, price, setOpenCase, id}) => {
     const dispatch = useDispatch();
@@ -12,7 +16,6 @@ const StartRouletteBlock = ({caseImg, price, setOpenCase, id}) => {
     const rouletteCount = useSelector(({roulette}) => roulette.multiply);
     const opensRemains = useSelector(({cases}) =>
         cases.limitedCases.find((limitedCase => limitedCase.id === +id)))?.remain;
-
     const runCase = () => {
         if (opensRemains) {
             dispatch(decrementRemainCasesActionCreator(rouletteCount, +id));
@@ -22,32 +25,38 @@ const StartRouletteBlock = ({caseImg, price, setOpenCase, id}) => {
         dispatch(decrementMoneyActionCreator(rouletteCount * price));
     }
 
-    const chooseMultiply = e => {
-        dispatch(setMultiplyActionCreator(+e.target.dataset.multiply));
+    const chooseMultiply = multiply => {
+        dispatch(setMultiplyActionCreator(multiply));
     }
 
     return (
         <div>
             <CaseImage src={caseImg} alt="case Image"/>
-            <div>
-                <OpenCase onClick={runCase}>Открыть</OpenCase>
-                <NeonButton onClick={null}>{rouletteCount * price} Р</NeonButton>
-            </div>
-            <span style={{color: "#fff", marginBottom: "10px", display: "inline-block"}}>Открыть за раз</span>
-            <Multipliers>
-                <Multiply className={rouletteCount === 1 && 'active'} data-multiply={1}
-                          onClick={chooseMultiply}>X1</Multiply>
-                <Multiply className={rouletteCount === 2 && 'active'} data-multiply={2} onClick={chooseMultiply}
-                          disabled={price * 2 > totalMoney}>X2</Multiply>
-                <Multiply className={rouletteCount === 3 && 'active'} data-multiply={3} onClick={chooseMultiply}
-                          disabled={price * 3 > totalMoney}>X3</Multiply>
-                <Multiply className={rouletteCount === 4 && 'active'} data-multiply={4} onClick={chooseMultiply}
-                          disabled={price * 4 > totalMoney}>X4</Multiply>
-                <Multiply className={rouletteCount === 5 && 'active'} data-multiply={5} onClick={chooseMultiply}
-                          disabled={price * 5 > totalMoney}>X5</Multiply>
-                <Multiply className={rouletteCount === 10 && 'active'} data-multiply={10} onClick={chooseMultiply}
-                          disabled={price * 10 > totalMoney}>X10</Multiply>
-            </Multipliers>
+            {<div>
+                {opensRemains === 0 ?
+                    null
+                    :
+                    <>
+                        <OpenCase onClick={runCase}>Открыть</OpenCase>
+                        <NeonButton>{rouletteCount * price} Р</NeonButton>
+                    </>
+                }
+            </div>}
+            {opensRemains === 0 ?
+                <Text>Лимит открытий</Text>
+                : <>
+                    <Text>Открыть за раз</Text>
+                    <Multipliers>
+                        {multiplies.map(multiply => (
+                            <Multiply className={rouletteCount === multiply && 'active'}
+                                      key={multiply}
+                                      onClick={() => chooseMultiply(multiply)}
+                                      disabled={price * multiply > totalMoney || opensRemains < multiply}>
+                                X{multiply}
+                            </Multiply>))}
+                    </Multipliers>
+                </>
+            }
         </div>
     );
 };

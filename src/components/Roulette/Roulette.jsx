@@ -25,21 +25,27 @@ const getWeapon = (weapons) => {
     return weapons.find(weapon => weapon.chance[0] <= winnerNumber && weapon.chance[1] >= winnerNumber);
 }
 
+
 const Roulette = ({weapons, removeRoulette, rouletteId}) => {
     const [rollAnimation, setRollAnimation] = useState(false);
     const [prepareAnimation, setPrepareAnimation] = useState(false);
     const [showWinner, setShowWinner] = useState(false);
+    // if user skipped animation or leave roulette page, weapons will be automate sell
+    let isSellWeapon = useRef(false);
 
     const winner = useRef(getWeapon(weapons));
 
     const weaponsArray = useMemo(() => new Array(COUNT_OF_WEAPONS_IN_ROULETTE).fill(0).map((_, index) => {
-        if (index === WINNER_INDEX) return <WeaponCard key={index} weapon={winner.current}/>;
+        if (index === WINNER_INDEX)  {
+            return <WeaponCard key={index} weapon={winner.current}/>;
+        }
         return <WeaponCard key={index} weapon={getWeapon(weapons)}/>;
     }), []);
 
     const dispatch = useDispatch();
 
     const sellWeapon = () => {
+        isSellWeapon.current = true;
         dispatch(incrementMoneyActionCreator(winner.current.price));
         dispatch(decrementRoulettesCountActionCreator());
         dispatch(addWeaponToLiveActionCreator(winner.current));
@@ -52,7 +58,13 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
 
     useEffect(() => {
         setPrepareAnimation(true);
-        setTimeout(() => setRollAnimation(true), 500);
+        let timerId = setTimeout(() => setRollAnimation(true), 500);
+        return () => {
+            if (!isSellWeapon.current) {
+                clearTimeout(timerId);
+                sellWeapon();
+            }
+        }
     }, []);
 
     return (

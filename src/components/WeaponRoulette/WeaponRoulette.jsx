@@ -6,7 +6,6 @@ import Roulette from "../Roulette/Roulette";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { setMultiplyActionCreator } from "../../reducers/rouletteReducer";
-import { CaseWrapper, Limited } from "./WeaponRoulette.styles";
 import LimitedWrapper from "../LimitedWrapper/LimitedWrapper";
 
 
@@ -17,7 +16,6 @@ export const RouletteContainer = styled.div`
 `;
 
 const WeaponRoulette = ({caseImg, price, weapons, id, caseLimit}) => {
-
     const [openCase, setOpenCase] = useState(false);
     const rouletteCount = useSelector(({roulette}) => roulette.multiply);
 
@@ -26,6 +24,11 @@ const WeaponRoulette = ({caseImg, price, weapons, id, caseLimit}) => {
     //count of active roulettes
     const activeRoulettes = useSelector(({roulette}) => roulette.activeRoulettes);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setMultiplyActionCreator(1));
+    }, []);
+
     useEffect(() => {
         setRouletteIds(Array(rouletteCount).fill(0).map((_, index) => index + 1))
     }, [rouletteCount]);
@@ -37,7 +40,7 @@ const WeaponRoulette = ({caseImg, price, weapons, id, caseLimit}) => {
         setRouletteIds(prev => prev.filter(item => item !== rouletteId));
         if (activeRoulettes === 1) {
             setOpenCase(false);
-            setRouletteIds([1])
+            setRouletteIds([1]);
             dispatch(setMultiplyActionCreator(1));
         }
     }

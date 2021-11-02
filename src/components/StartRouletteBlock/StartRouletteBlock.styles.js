@@ -64,3 +64,9 @@ export const Multiply = styled.button`
     opacity: .1;
   }
 `;
+
+export const Text = styled.span`
+  color: #fff;
+  margin-bottom: 10px;
+  display: inline-block;
+`;
