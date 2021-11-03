@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
   background-color: #1d2435;
@@ -28,7 +29,9 @@ export const Navbar = styled.nav`
   }
 `;
 
-export const NavbarItem = styled.li`
+export const NavbarItem = styled(Link).attrs(props =>({
+    to: props.to
+}))`
   display: flex;
   align-items: center;
   padding: 10px 0;

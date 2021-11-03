@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import NeonButton from "../NeonButton/NeonButton";
 
 
 export const RouletteStyled = styled.div`
@@ -45,8 +46,8 @@ export const WinnerBlock = styled.div`
 export const WinnerImage = styled.div`
   background-image: url(${props => props.img});
   margin: 0 auto 15px;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -66,11 +67,25 @@ export const WinnerName = styled.span`
   display: block;
   color: #fff;
   margin-bottom: 5px;
+  font-size: 20px;
 `;
 
 export const WinnerSkin = styled.span`
   display: block;
+  font-size: 17px;
   color: #0f5473;
   font-weight: 700;
   margin-bottom: 20px;
+`;
+
+export const ContractButton = styled.button`
+  border-radius: 15px;
+  padding: 10px 10px;
+  margin-left: 5px;
+  border: none;
+  background-color: #2d354b;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 15px;
+  color: #fff;
 `;

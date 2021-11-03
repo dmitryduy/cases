@@ -5,9 +5,10 @@ import { colors } from "../../colors";
 export const Card = styled.div`
   width: 150px;
   height: 130px;
-  margin: 0 2px;
+  margin: 0 2px 10px;
   flex-shrink: 0;
   position: relative;
+
   ${props => props.color === colors.lightBlue && css`
     background-image: radial-gradient(at bottom, #002533 0, transparent 75%), radial-gradient(at bottom, #0bf 0, transparent 60%), radial-gradient(at bottom, rgba(0, 187, 255, .9) 0, transparent 66%);
     -webkit-box-shadow: inset 0 -0.125rem #0bf;
@@ -60,4 +61,46 @@ export const WeaponSkin = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const ContractButton = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .3);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .3s;
+  &:hover {
+    opacity: 1;
+  }
+  &:before {
+    position: absolute;
+    content: '${props => props.price} P';
+    background-color: #4708ff;
+    color: #fff;
+    font-weight: bold;
+    padding: 0 5px;
+    right: 5px;
+    top: 5px;
+    opacity: .7;
+    border-radius: 3px;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 12px;
+    opacity: .7;
+    &:hover {
+      box-shadow: none;
+    }
+  }
 `;

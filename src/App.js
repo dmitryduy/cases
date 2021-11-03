@@ -8,6 +8,7 @@ import CasePage from "./pages/CasePage/CasePage";
 import Container from "./Container/Container";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import ContractsPage from "./pages/ContractsPage/ContractsPage";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
                         <Switch>
                             <Route exact path='/' component={HomePage}/>
                             <Route path='/case/:id' component={CasePage}/>
+                            <Route path='/contracts' component={ContractsPage}/>
                         </Switch>
                     </Container>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import {
+    ContractButton,
     InnerRouletteBlock,
     RouletteStyled,
     WinnerBlock,
@@ -16,6 +17,7 @@ import {
     decrementRoulettesCountActionCreator,
 } from "../../reducers/rouletteReducer";
 import { addWeaponToLiveActionCreator } from "../../reducers/liveRouletteReducer";
+import { addToContractsActionCreator } from "../../reducers/contractsReducer";
 
 const COUNT_OF_WEAPONS_IN_ROULETTE = 30;
 const WINNER_INDEX = 24;
@@ -44,12 +46,22 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
 
     const dispatch = useDispatch();
 
-    const sellWeapon = () => {
+    const beforeCellHandler = () => {
         isSellWeapon.current = true;
-        dispatch(incrementMoneyActionCreator(winner.current.price));
         dispatch(decrementRoulettesCountActionCreator());
         dispatch(addWeaponToLiveActionCreator(winner.current));
         removeRoulette(rouletteId);
+    }
+
+    const sellWeapon = () => {
+        beforeCellHandler();
+        dispatch(incrementMoneyActionCreator(winner.current.price));
+    }
+
+    const addToContracts = () => {
+        beforeCellHandler();
+        dispatch(addToContractsActionCreator(winner.current));
+
     }
 
     const showWinnerHandler = () => {
@@ -61,6 +73,7 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
         let timerId = setTimeout(() => setRollAnimation(true), 500);
         return () => {
             if (!isSellWeapon.current) {
+                console.log(1);
                 clearTimeout(timerId);
                 sellWeapon();
             }
@@ -74,6 +87,7 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
                 <WinnerName>{winner.current.name}</WinnerName>
                 <WinnerSkin>{winner.current.skin}</WinnerSkin>
                 <NeonButton onClick={sellWeapon}>Продать за {winner.current.price} Р</NeonButton>
+                <ContractButton onClick={addToContracts}>В контракты</ContractButton>
             </WinnerBlock>
             : <div style={{display: "flex", flexDirection: "column", margin: "0 auto"}}>
                 <RouletteStyled className={prepareAnimation && "prepare"}>

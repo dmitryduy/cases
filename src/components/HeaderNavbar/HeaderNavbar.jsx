@@ -5,19 +5,19 @@ const HeaderNavbar = () => {
     return (
         <NavbarContainer>
             <Navbar>
-                <NavbarItem>
+                <NavbarItem to='/top'>
                     <img src="https://givedrop.ru/images/icon/icon-top.svg" alt="img"/>
                     <span>Топ игроков</span>
                 </NavbarItem>
-                <NavbarItem>
+                <NavbarItem to='/faq'>
                     <img src="https://givedrop.ru/images/icon/icon-faq.svg" alt="img"/>
                     <span>FAQ</span>
                 </NavbarItem>
-                <NavbarItem>
+                <NavbarItem to='/contracts'>
                     <img src="https://givedrop.ru/images/icon/icon-contracts.svg" alt="img"/>
                     <span>Контракты</span>
                 </NavbarItem>
-                <NavbarItem>
+                <NavbarItem to='/upgrades'>
                     <img src="https://givedrop.ru/images/icon/icon-upgrade.svg" alt="img"/>
                     <span>Апгрейды</span>
                 </NavbarItem>

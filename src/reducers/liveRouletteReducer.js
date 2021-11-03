@@ -9,14 +9,14 @@ const types = {
 export const liveRouletteReducer = (state=initialState, action) => {
     switch (action.type) {
         case types.ADD_WEAPON:
-            if (state.weapons.length === 12) {
+            if (state.weapons.length === 15) {
                  state.weapons.shift();
                 return {
-                    weapons: [...state.weapons, action.payload]
+                    weapons: [...state.weapons, {...action.payload, timestamp: new Date().getTime()}]
                 }
             }
             return {
-                weapons: [...state.weapons, action.payload]
+                weapons: [...state.weapons, {...action.payload, timestamp: new Date().getTime()}]
             }
         default:
             return state;

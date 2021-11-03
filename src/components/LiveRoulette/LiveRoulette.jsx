@@ -3,8 +3,6 @@ import { LiveRouletteContainer, Shadow } from "./LiveRoulette.styles";
 import WeaponCard from "../WeaponCard/WeaponCard";
 import { useSelector } from "react-redux";
 
-let id = 0;
-
 
 const LiveRoulette = () => {
 
@@ -14,8 +12,7 @@ const LiveRoulette = () => {
     return (
         <LiveRouletteContainer>
             {weapons.map(weapon => {
-                id++;
-                return <WeaponCard weapon={weapon} key={id}/>
+                return <WeaponCard weapon={weapon} key={weapon.timestamp}/>
             })}
             <Shadow/>
         </LiveRouletteContainer>
