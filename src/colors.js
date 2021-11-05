@@ -1,8 +1,8 @@
 export const colors = {
-    gold: 'gold',
-    red: 'red',
-    pink: 'pink',
-    purple: 'purple',
-    blue: 'blue',
-    lightBlue: 'lightblue'
+    gold: '#fffb00',
+    red: '#ff002f',
+    pink: '#f700ff',
+    purple: '#9400ff',
+    blue: '#0073ff',
+    lightBlue: '#0bf'
 }

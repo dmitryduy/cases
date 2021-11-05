@@ -1,14 +1,16 @@
 import React from 'react';
 import SectionName from "../SectionName/SectionName";
 import { ContractWeapons } from "./WeaponsForContractsSection.styles";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import WeaponCard from "../WeaponCard/WeaponCard";
+import { addToContractRouletteActionCreator } from "../../reducers/contractsReducer";
 
 const WeaponsForContractsSection = () => {
     const contractWeapons = useSelector(({contracts}) => contracts.contracts);
+    const dispatch = useDispatch();
 
     const addToContract = weapon => {
-
+        dispatch(addToContractRouletteActionCreator(weapon));
     }
     return (
         <div>

@@ -13,9 +13,9 @@ export const OuterCircle = styled.div`
 
 export const MiddleCircle = styled.div`
   border-radius: 50%;
-  background-color: rgba(29,36,53, .8);
-  width: 75%;
-  height: 75%;
+  background-color: rgba(29,36,53, .6);
+  width: 85%;
+  height: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
