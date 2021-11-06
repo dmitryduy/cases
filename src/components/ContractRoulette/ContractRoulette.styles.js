@@ -28,4 +28,41 @@ export const InnerCircle = styled.div`
   box-shadow: 0 0 0 0.3125rem #16172d, 0 0 0 0.625rem #1b1f33;
   width: 60%;
   height: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  strong {
+    color: #5aeaff;
+  }
+  span {
+    color: #fff;
+  }
+  span:nth-child(2) {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+`;
+
+export const  CreateContractButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  border-radius: 20px;
+  padding: 10px 30px;
+  background-color: #1d2436;
+  cursor: pointer;
+  transition: .2s linear;
+  margin: 0 auto 10px;
+  &:hover {
+    background-color: #262e45;
+  }
+  span:first-child {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: .8em;
+    margin-bottom: 5px;
+  }
+  span:last-child {
+    color: #bfa8ff;
+  }
 `;

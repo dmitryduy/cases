@@ -1,6 +1,7 @@
 const initialState = {
     contracts: JSON.parse(localStorage.getItem('contracts')) || [],
     inContract: [],
+    totalPrice: 0,
 }
 
 const types = {
@@ -23,12 +24,15 @@ export const contractsReducer = (state = initialState, action) => {
             }
             return {
                 contracts: state.contracts.filter(weapon => weapon.timestamp !== action.payload.timestamp),
-                inContract: [...state.inContract, action.payload]
+                inContract: [...state.inContract, action.payload],
+                totalPrice: state.totalPrice += action.payload.price
             }
         case types.REMOVE_FROM_CONTRACT_ROULETTE:
+            const removeWeapon = state.inContract.find(weapon => weapon.timestamp === action.payload);
             return {
-                contracts: [...state.contracts, state.inContract.find(weapon => weapon.timestamp === action.payload)],
-                inContract: state.inContract.filter(weapon => weapon.timestamp !== action.payload)
+                contracts: [...state.contracts, removeWeapon],
+                inContract: state.inContract.filter(weapon => weapon.timestamp !== action.payload),
+                totalPrice: state.totalPrice -= removeWeapon.price
             }
         default:
             return state;
