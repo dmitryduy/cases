@@ -4,6 +4,12 @@ export const ContractWeapons = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  max-height: 500px;
+  overflow: auto;
+  margin-bottom: 40px;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 `;
 
 export const NoContractsError = styled.div`

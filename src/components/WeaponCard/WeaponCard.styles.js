@@ -79,7 +79,7 @@ export const ContractButton = styled.div`
   &:before {
     position: absolute;
     content: '${props => props.price} P';
-    background-color: #4708ff;
+    background-color: ${props => props.color};
     color: #fff;
     font-weight: bold;
     padding: 0 5px;
@@ -88,19 +88,24 @@ export const ContractButton = styled.div`
     opacity: .7;
     border-radius: 3px;
   }
+  
+`;
 
-  button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 90%;
-    transform: translate(-50%, -50%);
-    border-radius: 3px;
-    padding: 5px;
-    font-size: 12px;
-    opacity: .7;
-    &:hover {
-      box-shadow: none;
-    }
+export const AddToContractButton = styled.button`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  padding: 5px;
+  font-size: 12px;
+  opacity: .7;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  background-color: ${props => props.color};
+  &:hover {
+    box-shadow: none;
   }
 `;

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Card, ContractButton, WeaponImage, WeaponName, WeaponSkin } from "./WeaponCard.styles";
-import NeonButton from "../NeonButton/NeonButton";
+import { AddToContractButton, Card, ContractButton, WeaponImage, WeaponName, WeaponSkin } from "./WeaponCard.styles";
 
 const WeaponCard = ({weapon, contracts, addToContract}) => {
     return (
@@ -9,8 +8,8 @@ const WeaponCard = ({weapon, contracts, addToContract}) => {
             <WeaponImage src={weapon.img} alt={`${weapon.name} | ${weapon.skin}`}/>
             <WeaponName>{weapon.name}</WeaponName>
             <WeaponSkin>{weapon.skin}</WeaponSkin>
-            {contracts && <ContractButton price={weapon.price}>
-                <NeonButton onClick={() => addToContract(weapon)}>Добавить в контракт</NeonButton>
+            {contracts && <ContractButton price={weapon.price} color={weapon.color}>
+                <AddToContractButton onClick={() => addToContract(weapon)} color={weapon.color}>Добавить в контракт</AddToContractButton>
             </ContractButton>}
         </Card>
     );

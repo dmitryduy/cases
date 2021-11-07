@@ -1,16 +1,10 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import {
-    ContractButton,
     InnerRouletteBlock,
     RouletteStyled,
-    WinnerBlock,
-    WinnerImage,
-    WinnerName,
-    WinnerSkin
 } from "./Roulette.styles";
 import WeaponCard from "../WeaponCard/WeaponCard";
-import NeonButton from "../NeonButton/NeonButton";
 import { useDispatch } from "react-redux";
 import { incrementMoneyActionCreator } from "../../reducers/profileReducer";
 import {
@@ -18,12 +12,13 @@ import {
 } from "../../reducers/rouletteReducer";
 import { addWeaponToLiveActionCreator } from "../../reducers/liveRouletteReducer";
 import { addToContractsActionCreator } from "../../reducers/contractsReducer";
+import WinnerBlock from "../WinnerBlock/WinnerBlock";
 
 const COUNT_OF_WEAPONS_IN_ROULETTE = 30;
 const WINNER_INDEX = 24;
 
 const getWeapon = (weapons) => {
-    const winnerNumber = Math.floor(Math.random() * 135500);
+    const winnerNumber = Math.floor(Math.random() * 100000);
     return weapons.find(weapon => weapon.chance[0] <= winnerNumber && weapon.chance[1] >= winnerNumber);
 }
 
@@ -73,7 +68,7 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
         let timerId = setTimeout(() => setRollAnimation(true), 500);
         return () => {
             if (!isSellWeapon.current) {
-                console.log(1);
+
                 clearTimeout(timerId);
                 sellWeapon();
             }
@@ -82,13 +77,8 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
 
     return (
         <>{showWinner
-            ? <WinnerBlock>
-                <WinnerImage color={winner.current.color} img={winner.current.img}/>
-                <WinnerName>{winner.current.name}</WinnerName>
-                <WinnerSkin>{winner.current.skin}</WinnerSkin>
-                <NeonButton onClick={sellWeapon}>Продать за {winner.current.price} Р</NeonButton>
-                <ContractButton onClick={addToContracts}>В контракты</ContractButton>
-            </WinnerBlock>
+            ?
+            <WinnerBlock winner={winner.current} addToContracts={addToContracts} sellWeapon={sellWeapon}/>
             : <div style={{display: "flex", flexDirection: "column", margin: "0 auto"}}>
                 <RouletteStyled className={prepareAnimation && "prepare"}>
                     <InnerRouletteBlock onTransitionEnd={showWinnerHandler}
