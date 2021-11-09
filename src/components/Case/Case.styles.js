@@ -1,24 +1,48 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 
-export const CaseContainer = styled(Link).attrs(props =>({
-    to: `/case/${props.name}`
+export const CaseContainer = styled(Link).attrs(props => ({
+    to: `${props.name ? `/case/${props.name}` : '/'}`
 }))`
+  ${props => props.wip ? css`
+            & * {
+              opacity: .4;
+            }
+
+            position: relative;
+
+            &:before {
+              content: 'WIP';
+              font-size: 100px;
+              letter-spacing: 20px;
+              transform: rotate(45deg);
+              top: 20%;
+              left: 20%;
+              position: absolute;
+              color: #e8156a;
+              text-shadow: 0 0 20px;
+              z-index: 999;
+            }
+          `
+          : css`
+            cursor: pointer;
+
+            &:hover img {
+              transform: translateY(-10px);
+            }
+          `
+  }
   max-width: 300px;
   min-width: 200px;
-  cursor: pointer;
   margin: 0 10px 50px;
-  
+
+
   &:last-child {
     flex: 1;
   }
-  
-  &:hover img {
-    transform: translateY(-10px);
-  }
 
-  
+
   @media (max-width: 700px) {
     max-width: 300px;
   }

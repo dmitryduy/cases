@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NeonButton from "../NeonButton/NeonButton";
+
 
 
 export const RouletteStyled = styled.div`
@@ -30,7 +30,7 @@ export const RouletteStyled = styled.div`
 
 export const InnerRouletteBlock = styled.div`
   display: flex;
-  transition: 8s ease-in-out;
+  transition: 8.9s cubic-bezier(0,1,1,1) 100ms;
 
   &.rolling {
     transform: translateX(${props => props.rollTo}px);

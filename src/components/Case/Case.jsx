@@ -16,7 +16,7 @@ const Case = ({caseItem}) => {
         cases.limitedCases.find(limitedCase => limitedCase.id === caseItem.id)
     ));
     return (
-        <CaseContainer name={caseItem.id}>
+        <CaseContainer name={caseItem.wip ? '' : caseItem.id} wip={caseItem.wip}>
             <div style={{position: 'relative'}}>
                 <CaseImage src={caseItem.img} alt={caseItem.name}/>
                 {caseItem.limit > 0 && <CircleProgressBar max={caseItem.limit} current={caseItem.limit - casesRemain.remain}/>}

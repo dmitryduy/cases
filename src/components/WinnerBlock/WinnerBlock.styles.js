@@ -4,14 +4,10 @@ export const WinnerBlockContainer = styled.div`
   width: 300px;
   margin: 0 0 30px;
   flex-basis: auto;
-  &.contract-winner {
-    transform: scale(0);
-    transition: transform .5s linear;
-    &.scale {
-      transform: scaleX(1);
-    }
-    
-    
+  transform: scale(0);
+  transition: transform 1s linear;
+  &.scale {
+    transform: scaleX(1);
   }
 `;
 
