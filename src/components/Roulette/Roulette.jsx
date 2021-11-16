@@ -15,6 +15,7 @@ import { addToContractsActionCreator } from "../../reducers/contractsReducer";
 import WinnerBlock from "../WinnerBlock/WinnerBlock";
 import rouletteAudio from '../../assets/audio/gambling.mp3';
 import openedCaseAudio from '../../assets/audio/opennedCase.mp3';
+import { useHistory, useParams } from "react-router-dom";
 
 const COUNT_OF_WEAPONS_IN_ROULETTE = 50;
 const WINNER_INDEX = 47;
@@ -28,6 +29,7 @@ const openedCase = new Audio(openedCaseAudio);
 const openningCase = new Audio(rouletteAudio);
 
 const Roulette = ({weapons, removeRoulette, rouletteId}) => {
+    const {id} = useParams();
     const [rollAnimation, setRollAnimation] = useState(false);
     const [prepareAnimation, setPrepareAnimation] = useState(false);
     const [showWinner, setShowWinner] = useState(false);
@@ -49,7 +51,7 @@ const Roulette = ({weapons, removeRoulette, rouletteId}) => {
     const beforeCellHandler = () => {
         isSellWeapon.current = true;
         dispatch(decrementRoulettesCountActionCreator());
-        dispatch(addWeaponToLiveActionCreator(winner.current));
+        dispatch(addWeaponToLiveActionCreator(winner.current, id));
         removeRoulette(rouletteId);
     }
 

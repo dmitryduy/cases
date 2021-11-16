@@ -12,7 +12,7 @@ const LiveRoulette = () => {
     return (
         <LiveRouletteContainer>
             {weapons.map(weapon => {
-                return <WeaponCard weapon={weapon} key={weapon.timestamp}/>
+                return <WeaponCard weapon={weapon} key={weapon.timestamp} liveRoulette/>
             })}
             <Shadow/>
         </LiveRouletteContainer>

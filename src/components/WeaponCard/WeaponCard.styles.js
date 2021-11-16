@@ -1,6 +1,43 @@
 import styled, { css } from "styled-components";
 import { colors } from "../../colors";
 
+export const FromCase = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 999;
+  opacity: 0;
+  transition: .3s;
+  transform: translateY(100%);
+  &:hover~span {
+    opacity: 0;
+  }
+  &:before {
+    content: '';
+    background-image: url(${props => props.img});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:after {
+    content: '${props => props.caseName}';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    width: 100%;
+  }
+`;
 
 export const Card = styled.div`
   width: 150px;
@@ -8,7 +45,12 @@ export const Card = styled.div`
   margin: 0 2px 10px;
   flex-shrink: 0;
   position: relative;
-
+  cursor: pointer;
+  &:hover>div:first-child {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
   ${props => props.color === colors.lightBlue && css`
     background-image: radial-gradient(at bottom, #002533 0, transparent 75%), radial-gradient(at bottom, #0bf 0, transparent 60%), radial-gradient(at bottom, rgba(0, 187, 255, .9) 0, transparent 66%);
     -webkit-box-shadow: inset 0 -0.125rem #0bf;
@@ -61,6 +103,14 @@ export const WeaponSkin = styled.span`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+`;
+
+export const Chance = styled.span`
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #fefefe;
+  opacity: .8;
 `;
 
 export const ContractButton = styled.div`

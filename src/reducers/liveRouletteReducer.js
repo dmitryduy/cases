@@ -1,3 +1,5 @@
+import { cases } from "../cases";
+
 const initialState = {
     weapons: JSON.parse(localStorage.getItem('liveRoulette')) || []
 }
@@ -9,23 +11,28 @@ const types = {
 export const liveRouletteReducer = (state=initialState, action) => {
     switch (action.type) {
         case types.ADD_WEAPON:
+            const {img: caseUrl, name: caseName} = cases.find(caseItem => caseItem.id === +action.payload.caseId);
+            console.log(caseUrl)
             if (state.weapons.length === 15) {
                  state.weapons.shift();
                 return {
-                    weapons: [...state.weapons, {...action.payload, timestamp: new Date().getTime()}]
+                    weapons: [...state.weapons, {...action.payload.weapon, timestamp: new Date().getTime(), caseUrl, caseName}]
                 }
             }
             return {
-                weapons: [...state.weapons, {...action.payload, timestamp: new Date().getTime()}]
+                weapons: [...state.weapons, {...action.payload.weapon, timestamp: new Date().getTime(), caseUrl, caseName}]
             }
         default:
             return state;
     }
 }
 
-export const addWeaponToLiveActionCreator = weapon => {
+export const addWeaponToLiveActionCreator = (weapon, caseId) => {
     return {
         type: types.ADD_WEAPON,
-        payload: weapon,
+        payload: {
+            weapon,
+            caseId
+        },
     }
 }
