@@ -12,7 +12,7 @@ import {
 
 const WeaponCard = ({weapon, contracts, addToContract, liveRoulette}) => {
     return (
-        <Card color={weapon.color}>
+        <Card color={weapon.color} liveRoulette={liveRoulette}>
             {liveRoulette && <FromCase img={weapon.caseUrl} caseName={weapon.caseName}/>}
             <WeaponImage src={weapon.img} alt={`${weapon.name} | ${weapon.skin}`}/>
             <WeaponName>{weapon.name}</WeaponName>

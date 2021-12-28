@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
 export const WinnerBlockContainer = styled.div`
-  width: 300px;
-  margin: 0 0 30px;
-  flex-basis: auto;
+
+  width: 400px;
+  justify-self: center;
   transform: scale(0);
   transition: transform 1s linear;
   &.scale {
     transform: scaleX(1);
+  }
+  @media (max-width: 420px) {
+    width: 200px;
   }
 `;
 

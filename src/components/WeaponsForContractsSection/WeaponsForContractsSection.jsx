@@ -1,11 +1,12 @@
 import React from 'react';
 import SectionName from "../SectionName/SectionName";
-import { ContractFaqs, ContractWeapons, NoContractsError } from "./WeaponsForContractsSection.styles";
+import { ContractFaqs, ContractWeapons } from "./WeaponsForContractsSection.styles";
 import { useDispatch, useSelector } from "react-redux";
 import WeaponCard from "../WeaponCard/WeaponCard";
 import { addToContractRouletteActionCreator } from "../../reducers/contractsReducer";
 import { Link } from "react-router-dom";
 import FAQOption from "../FAQOption/FAQOption";
+import ContractsError from "../ContractsError/ContractsError";
 
 const options = [
     {
@@ -39,7 +40,7 @@ const WeaponsForContractsSection = () => {
     }
     return (
         <div>
-            <SectionName name='Доступные для контракта предметы' color='#fff'/>
+            <SectionName name='Доступные для контракта предметы' color='#fff' hideBefore/>
             {contractWeapons.length
                 ?
                 <ContractWeapons>
@@ -48,13 +49,13 @@ const WeaponsForContractsSection = () => {
                     ))}
                 </ContractWeapons>
                 :
-                <NoContractsError>
+                <ContractsError>
                     <span>Отсутствуют предметы для контракта</span>
                     <span>
                         <Link to='/'>Откройте несколько кейсов</Link>,
                         вернитесь на эту страницу и вы сможете создать контракт
                     </span>
-                </NoContractsError>
+                </ContractsError>
             }
             <ContractFaqs>
                 {options.map(option => (

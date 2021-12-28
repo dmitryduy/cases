@@ -1,6 +1,8 @@
 import React from 'react';
-import { Profile, ProfileBalance, ProfileImage, ProfileName } from "./ProfileInfo.styles";
+
 import { useSelector } from "react-redux";
+
+import { Profile, ProfileBalance, ProfileImage, ProfileName } from "./ProfileInfo.styles";
 
 const ProfileInfo = () => {
     const totalMoney = useSelector(({profile}) => profile.totalMoney);

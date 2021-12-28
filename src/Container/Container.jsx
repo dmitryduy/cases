@@ -6,6 +6,9 @@ const MainContainer = styled.div`
   @media (max-width: 1050px) {
     padding: 0 20px;
   }
+  @media (max-width: 400px) {
+    padding: 0 5px;
+  }
 `;
 
 const Container = ({children}) => {

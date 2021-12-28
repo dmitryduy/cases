@@ -5,11 +5,13 @@ import styled from "styled-components";
 export const RouletteStyled = styled.div`
   transform: scale(.3);
   transition: .5s linear;
-  width: 500px;
+  width: 400px;
   margin: 0 auto 30px;
   overflow-x: hidden;
   position: relative;
-
+  @media (max-width: 420px) {
+    width: 200px;
+  }
   &.prepare {
     transform: scale(1);
   }

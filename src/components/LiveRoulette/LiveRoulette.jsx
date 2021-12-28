@@ -1,7 +1,9 @@
 import React from 'react';
+
+import { useSelector } from "react-redux";
+
 import { LiveRouletteContainer, Shadow } from "./LiveRoulette.styles";
 import WeaponCard from "../WeaponCard/WeaponCard";
-import { useSelector } from "react-redux";
 
 
 const LiveRoulette = () => {

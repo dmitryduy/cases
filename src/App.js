@@ -1,13 +1,15 @@
-import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Provider } from "react-redux";
+
+import './App.css';
+
+import store from "./store/store";
 
 import HomePage from "./pages/HomePage/HomePage";
 import Header from "./components/Header/Header";
 import LiveRoulette from "./components/LiveRoulette/LiveRoulette";
 import CasePage from "./pages/CasePage/CasePage";
 import Container from "./Container/Container";
-import { Provider } from "react-redux";
-import store from "./store/store";
 import ContractsPage from "./pages/ContractsPage/ContractsPage";
 import WIPPage from "./pages/WIPPage/WIPPage";
 

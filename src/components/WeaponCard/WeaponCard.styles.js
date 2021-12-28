@@ -42,11 +42,16 @@ export const FromCase = styled.div`
 export const Card = styled.div`
   width: 150px;
   height: 130px;
-  margin: 0 2px 10px;
   flex-shrink: 0;
+  justify-self: center;
   position: relative;
   cursor: pointer;
-  &:hover>div:first-child {
+  ${props => props.liveRoulette && css`
+    &:hover>span {
+      opacity: 0;
+    }
+  `}
+    &:hover>div:first-child {
     opacity: 1;
     transform: translateY(0);
   }

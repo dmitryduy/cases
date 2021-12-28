@@ -8,8 +8,7 @@ export const ContentTitle = styled.h2`
   display: flex;
   overflow: hidden;
   margin: 30px 0;
-
-
+  
   &:after {
     position: absolute;
     height: 10px;
@@ -18,24 +17,22 @@ export const ContentTitle = styled.h2`
     content: '';
     background-repeat: repeat-x;
     background-image: url("https://givedrop.ru/images/h-decor-part-left.png");
-  }
-
-
-  &:after {
     left: 270px;
     transform: translateY(-50%);
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: repeat(7, 1fr);
-    font-size: 25px;
+    &:after {
+      display: none;
+    }
   }
 `;
 
 
 export const CardsContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 5px;
   margin-bottom: 50px;
 `;
 

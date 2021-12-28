@@ -2,22 +2,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const NavbarContainer = styled.div`
-  background-color: #1d2435;
   display: flex;
   justify-content: space-between;
   flex: 1;
-  svg {
-    padding: 20px;
-    fill: #8a90a1;
-    transition: .3s;
-    cursor: pointer;
-    &:hover {
-      fill: #eef3ff;
-    }
-  }
-  @media (max-width: 1100px) {
-    display: none;
-  }
+  background-color: #1d2435;
 `;
 
 export const Navbar = styled.nav`
@@ -50,5 +38,13 @@ export const NavbarItem = styled(Link).attrs(props =>({
   }
   img {
     margin-right: 10px;
+  }
+  @media (max-width: 680px) {
+    img {
+      margin-right: 0;
+    }
+    span {
+      display: none;
+    }
   }
 `;

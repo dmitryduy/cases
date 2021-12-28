@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
+import styled from "styled-components";
+
 import NotEnoughMoneyBlock from "../NotEnoughMoneyBlock/NotEnoughMoneyBlock";
 import StartRouletteBlock from "../StartRouletteBlock/StartRouletteBlock";
 import Roulette from "../Roulette/Roulette";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { setMultiplyActionCreator } from "../../reducers/rouletteReducer";
 import LimitedWrapper from "../LimitedWrapper/LimitedWrapper";
 
 
 export const RouletteContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 30px;
+  @media (max-width: 420px) {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 `;
 
 const WeaponRoulette = ({caseImg, price, weapons, id, caseLimit}) => {

@@ -1,7 +1,8 @@
 import React from 'react';
-import { HeaderContainer, Logo, LogoContainer, LogoTitle } from "./Header.styles";
 
+import { HeaderContainer, Logo, LogoContainer, LogoTitle } from "./Header.styles";
 import logo from '../../assets/img/logo.png';
+
 import HeaderNavbar from "../HeaderNavbar/HeaderNavbar";
 import ProfileInfo from "../ProfileInfo/ProfileInfo";
 

@@ -6,6 +6,9 @@ import { useSelector } from "react-redux";
 export const CaseWrapper = styled.div`
   display: flex;
   justify-content: space-evenly;
+  @media (max-width: 700px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const Limited = styled.div`
@@ -14,10 +17,17 @@ export const Limited = styled.div`
   justify-content: center;
   font-size: 30px;
   color: #fff;
-
+  @media (max-width: 700px) {
+    width: 50%;
+    font-size: 14px;
+    margin-bottom: 20px;
+    &:last-child {
+      order: -1;
+    }
+  }
   span:last-child {
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 `;
 

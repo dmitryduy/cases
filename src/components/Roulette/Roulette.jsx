@@ -15,7 +15,7 @@ import { addToContractsActionCreator } from "../../reducers/contractsReducer";
 import WinnerBlock from "../WinnerBlock/WinnerBlock";
 import rouletteAudio from '../../assets/audio/gambling.mp3';
 import openedCaseAudio from '../../assets/audio/opennedCase.mp3';
-import { useHistory, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const COUNT_OF_WEAPONS_IN_ROULETTE = 50;
 const WINNER_INDEX = 47;

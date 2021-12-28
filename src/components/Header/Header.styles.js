@@ -7,6 +7,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   background-color: #171d2d;
   height: 70px;
+  margin-bottom: 10px;
 `;
 
 export const LogoContainer = styled(Link).attrs({
@@ -16,7 +17,7 @@ export const LogoContainer = styled(Link).attrs({
   align-items: center;
   padding: 0 30px;
   @media (max-width: 500px) {
-    padding: 10px;
+    padding: 0 10px;
   }
 `;
 
@@ -29,10 +30,7 @@ export const LogoTitle = styled.span`
   color: #fff;
   font-weight: bold;
   font-size: 30px;
-  @media (max-width: 500px) {
-    font-size: 20px;
-  }
-  @media (max-width: 430px) {
-    font-size: 15px;
+  @media (max-width: 680px) {
+    display: none;
   }
 `;
