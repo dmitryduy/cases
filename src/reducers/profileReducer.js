@@ -5,7 +5,7 @@ const types = {
 }
 
 const initialState = {
-    totalMoney: +localStorage.getItem('totalMoney') || 100000,
+    totalMoney: +localStorage.getItem('totalMoney') || 0,
 }
 
 export const profileReducer = (state=initialState, action) => {

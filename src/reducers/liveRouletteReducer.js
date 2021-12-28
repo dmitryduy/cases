@@ -12,7 +12,6 @@ export const liveRouletteReducer = (state=initialState, action) => {
     switch (action.type) {
         case types.ADD_WEAPON:
             const {img: caseUrl, name: caseName} = cases.find(caseItem => caseItem.id === +action.payload.caseId);
-            console.log(caseUrl)
             if (state.weapons.length === 15) {
                  state.weapons.shift();
                 return {
