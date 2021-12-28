@@ -1,20 +1,22 @@
 {
   "files": {
     "main.css": "/cases/static/css/main.0ad364bf.chunk.css",
-    "main.js": "/cases/static/js/main.b4706d57.chunk.js",
-    "main.js.map": "/cases/static/js/main.b4706d57.chunk.js.map",
+    "main.js": "/cases/static/js/main.c2b3a9c3.chunk.js",
+    "main.js.map": "/cases/static/js/main.c2b3a9c3.chunk.js.map",
     "runtime-main.js": "/cases/static/js/runtime-main.dd0358aa.js",
     "runtime-main.js.map": "/cases/static/js/runtime-main.dd0358aa.js.map",
-    "static/js/2.fd3a2c4b.chunk.js": "/cases/static/js/2.fd3a2c4b.chunk.js",
-    "static/js/2.fd3a2c4b.chunk.js.map": "/cases/static/js/2.fd3a2c4b.chunk.js.map",
+    "static/js/2.36acdb5a.chunk.js": "/cases/static/js/2.36acdb5a.chunk.js",
+    "static/js/2.36acdb5a.chunk.js.map": "/cases/static/js/2.36acdb5a.chunk.js.map",
     "index.html": "/cases/index.html",
     "static/css/main.0ad364bf.chunk.css.map": "/cases/static/css/main.0ad364bf.chunk.css.map",
-    "static/js/2.fd3a2c4b.chunk.js.LICENSE.txt": "/cases/static/js/2.fd3a2c4b.chunk.js.LICENSE.txt"
+    "static/js/2.36acdb5a.chunk.js.LICENSE.txt": "/cases/static/js/2.36acdb5a.chunk.js.LICENSE.txt",
+    "static/media/gambling.3729ef15.mp3": "/cases/static/media/gambling.3729ef15.mp3",
+    "static/media/opennedCase.af434efb.mp3": "/cases/static/media/opennedCase.af434efb.mp3"
   },
   "entrypoints": [
     "static/js/runtime-main.dd0358aa.js",
-    "static/js/2.fd3a2c4b.chunk.js",
+    "static/js/2.36acdb5a.chunk.js",
     "static/css/main.0ad364bf.chunk.css",
-    "static/js/main.b4706d57.chunk.js"
+    "static/js/main.c2b3a9c3.chunk.js"
   ]
 }
