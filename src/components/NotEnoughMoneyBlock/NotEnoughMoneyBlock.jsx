@@ -4,7 +4,6 @@ import {
     NotEnoughMoneyImage,
     NotEnoughMoneyText
 } from "./NotEnoughMoneyBlock.styles";
-import NeonButton from "../NeonButton/NeonButton";
 
 const NotEnoughMoneyBlock = ({caseImg}) => {
     return (
@@ -15,9 +14,7 @@ const NotEnoughMoneyBlock = ({caseImg}) => {
             </NotEnoughMoneyContainer>
             <NotEnoughMoneyText>
                 <span>У вас недостаточно средств для открытия кейса!</span>
-                <span>Пополните ваш баланс</span>
             </NotEnoughMoneyText>
-            <NeonButton>Пополнить</NeonButton>
         </div>
     );
 };
