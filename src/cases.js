@@ -5523,7 +5523,7 @@ export const cases = [
         id: 10,
         name: 'Аметист кейс',
         price: 0,
-        discountPrice: 0,
+        discountPrice: null,
         wip: true,
         img: 'https://givedrop.ru/images/case/amethyst-min.png',
         weapons: [
