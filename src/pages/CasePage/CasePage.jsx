@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useParams } from "react-router-dom";
 
@@ -12,6 +12,9 @@ import WeaponRoulette from "../../components/WeaponRoulette/WeaponRoulette";
 const CasePage = () => {
     const {id} = useParams();
     const caseItem = cases.find(caseItem => caseItem.id === +id);
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, []);
     return (
         <>
             <SectionName name={caseItem.name} color="#fff"/>
