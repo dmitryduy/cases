@@ -6,7 +6,7 @@ const HeaderNavbar = () => {
         <NavbarContainer>
             <Navbar>
                 <NavbarItem to='/contracts'>
-                    <img src="https://givedrop.ru/images/icon/icon-contracts.svg" alt="img"/>
+                    <img src="https://givedrop.su/images/icon/icon-contracts.svg" alt="img"/>
                     <span>Контракты</span>
                 </NavbarItem>
             </Navbar>

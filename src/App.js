@@ -11,7 +11,6 @@ import LiveRoulette from "./components/LiveRoulette/LiveRoulette";
 import CasePage from "./pages/CasePage/CasePage";
 import Container from "./Container/Container";
 import ContractsPage from "./pages/ContractsPage/ContractsPage";
-import WIPPage from "./pages/WIPPage/WIPPage";
 
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
                             <Route exact path='/' component={HomePage}/>
                             <Route path='/case/:id' component={CasePage}/>
                             <Route path='/contracts' component={ContractsPage}/>
-                            <Route path='*' component={WIPPage}/>
                         </Switch>
                     </Container>
                 </div>

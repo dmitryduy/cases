@@ -11,12 +11,12 @@ import ContractsError from "../ContractsError/ContractsError";
 const options = [
     {
         id: 1,
-        img: 'https://givedrop.ru/images/icon/icon-case.svg',
+        img: 'https://givedrop.su/images/icon/icon-case.svg',
         text: 'Открывайте кейсы'
     },
     {
         id: 2,
-        img: 'https://givedrop.ru/images/icon/icon-contracts.svg',
+        img: 'https://givedrop.su/images/icon/icon-contracts.svg',
         text: 'Положите любые предметы в контракт'
     },
     {

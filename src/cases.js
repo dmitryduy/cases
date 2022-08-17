@@ -6,7 +6,7 @@ export const cases = [
         name: 'Пляжный кейс',
         price: 2000,
         discountPrice: 1500,
-        img: 'https://givedrop.ru/images/case/hellobeatch.png',
+        img: 'https://givedrop.su/images/case/hellobeatch.png',
         weapons: [
             {
                 id: 0,
@@ -411,7 +411,7 @@ export const cases = [
         name: 'Диско кейс',
         price: 110,
         discountPrice: 82,
-        img: 'https://givedrop.ru/images/case/discocase.png',
+        img: 'https://givedrop.su/images/case/discocase.png',
         weapons: [
             {
                 id: 33,
@@ -708,7 +708,7 @@ export const cases = [
         name: 'Жара кейс',
         price: 900,
         discountPrice: 750,
-        img: 'https://givedrop.ru/images/case/veryhotcase.png',
+        img: 'https://givedrop.su/images/case/veryhotcase.png',
         weapons: [
             {
                 id: 57,
@@ -1437,7 +1437,7 @@ export const cases = [
         name: 'Кальян кейс',
         price: 267,
         discountPrice: 170,
-        img: 'https://givedrop.ru/images/case/hookahcase.png',
+        img: 'https://givedrop.su/images/case/hookahcase.png',
         weapons: [
             {
                 id: 117,
@@ -1842,7 +1842,7 @@ export const cases = [
         name: 'Кейс лета',
         price: 200,
         discountPrice: 113,
-        img: 'https://givedrop.ru/images/case/summercase.png',
+        img: 'https://givedrop.su/images/case/summercase.png',
         weapons: [
             {
                 id: 150,
@@ -2091,7 +2091,7 @@ export const cases = [
         name: 'Рубиновый кейс',
         price: 0,
         discountPrice: null,
-        img: 'https://givedrop.ru/images/case/rubin.png',
+        img: 'https://givedrop.su/images/case/rubin.png',
         weapons: [
             {
                 id: 170,
@@ -2520,7 +2520,7 @@ export const cases = [
         name: 'Сапфировый кейс',
         price: 0,
         discountPrice: null,
-        img: 'https://givedrop.ru/images/case/saphir.png',
+        img: 'https://givedrop.su/images/case/saphir.png',
         weapons:[
             {
                 id: 205,
@@ -2733,7 +2733,7 @@ export const cases = [
         name: 'Алмазный кейс',
         price: 0,
         discountPrice: null,
-        img: 'https://givedrop.ru/images/case/almaz.png',
+        img: 'https://givedrop.su/images/case/almaz.png',
         weapons: [
             {
                 id: 222,
@@ -5299,7 +5299,7 @@ export const cases = [
         price: 0,
         discountPrice: null,
         wip: true,
-        img: 'https://givedrop.ru/images/case/emerald-min.png',
+        img: 'https://givedrop.su/images/case/emerald-min.png',
         weapons: [
             {
                 id: 1,
@@ -5525,7 +5525,7 @@ export const cases = [
         price: 0,
         discountPrice: null,
         wip: true,
-        img: 'https://givedrop.ru/images/case/amethyst-min.png',
+        img: 'https://givedrop.su/images/case/amethyst-min.png',
         weapons: [
             {
                 id: 1,
@@ -5751,7 +5751,7 @@ export const cases = [
         name: 'Хэллоуин кейс',
         price: 200,
         discountPrice: 150,
-        img: 'https://givedrop.ru/images/case/hall-min.png',
+        img: 'https://givedrop.su/images/case/hall-min.png',
         weapons: [
             {
                 id: 546,
@@ -6265,7 +6265,7 @@ export const cases = [
         name: 'Twitch кейс',
         price: 150,
         discountPrice: 100,
-        img: 'https://givedrop.ru/images/case/tw-min.png',
+        img: 'https://givedrop.su/images/case/tw-min.png',
         weapons: [
             {
                 id: 588,
@@ -6515,7 +6515,7 @@ export const cases = [
         name: 'Смок',
         price: 200,
         discountPrice: 150,
-        img: 'https://givedrop.ru/images/case/smoke321.png',
+        img: 'https://givedrop.su/images/case/smoke321.png',
         weapons: [
             {
                 id: 608,
@@ -6861,7 +6861,7 @@ export const cases = [
         name: 'Кейс мажора',
         price: 14999,
         discountPrice: null,
-        img: 'https://givedrop.ru/images/case/majorka_228.png',
+        img: 'https://givedrop.su/images/case/majorka_228.png',
         weapons: [
             {
                 id: 435,

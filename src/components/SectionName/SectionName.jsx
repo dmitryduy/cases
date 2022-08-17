@@ -17,7 +17,7 @@ export const SectionNameStyled = styled.h2`
       width: 294px;
       content: '';
       background-repeat: repeat-x;
-      background-image: url("https://givedrop.ru/images/h-decor-part-left.png");
+      background-image: url("https://givedrop.su/images/h-decor-part-left.png");
       @media (max-width: 900px) {
         width: 200px;
       }

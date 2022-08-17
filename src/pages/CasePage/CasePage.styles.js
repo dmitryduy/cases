@@ -16,7 +16,7 @@ export const ContentTitle = styled.h2`
     width: 100vw;
     content: '';
     background-repeat: repeat-x;
-    background-image: url("https://givedrop.ru/images/h-decor-part-left.png");
+    background-image: url("https://givedrop.su/images/h-decor-part-left.png");
     left: 270px;
     transform: translateY(-50%);
   }

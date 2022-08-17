@@ -17,9 +17,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-image: url("https://givedrop.ru/images/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #0f121e;
 }
 
 *::-webkit-scrollbar {
