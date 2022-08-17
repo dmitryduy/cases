@@ -24,7 +24,7 @@ export const FAQText = styled.span`
 `;
 
 export const Arrow = styled.img.attrs({
-    src: 'https://givedrop.ru/images/icon/icon-arrow-right.svg',
+    src: 'https://givedrop.su/images/icon/icon-arrow-right.svg',
     alt: 'arrow'
 })`
   width: 45px;

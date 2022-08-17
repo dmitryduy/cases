@@ -21,12 +21,12 @@ const options = [
     },
     {
         id: 3,
-        img: 'https://givedrop.ru/images/icon/icon-weapon.svg',
+        img: 'https://givedrop.su/images/icon/icon-weapon.svg',
         text: 'Получите рандомный предмет'
     },
     {
         id: 4,
-        img: 'https://givedrop.ru/images/icon/icon-check.svg',
+        img: 'https://givedrop.su/images/icon/icon-check.svg',
         text: 'Получите предмет от нашего бота или продайте сайту по цене Steam'
     },
 ]
